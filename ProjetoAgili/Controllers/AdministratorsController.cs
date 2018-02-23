@@ -473,7 +473,7 @@ namespace ProjetoAgili.Controllers
                 }
 
             }
-            return RedirectToAction("ShowRestaurants", "Administrators");
+            return RedirectToAction("ShowRestaurants", "Administrators", new { enabled = true });
         }
 
         #endregion
