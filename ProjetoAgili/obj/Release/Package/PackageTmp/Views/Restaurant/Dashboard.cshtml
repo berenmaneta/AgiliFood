@@ -1,0 +1,138 @@
+﻿
+@{
+    Layout = "../Layout/RestaurantIndex.cshtml";
+}
+
+<div class="content-wrapper" style="overflow:hidden;">
+    <section class="content-header">
+        <div class="row">
+
+            <div class="col-lg-4 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <h3>Gerenciar</h3>
+                        <p>Pratos</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-cutlery"></i>
+                    </div>
+                    <a href="@Url.Action("ShowDishes", "Restaurant")" class="small-box-footer">
+                        Gerenciar <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <h3>Adicionar</h3>
+                        <p>Pratos</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-plus"></i>
+                    </div>
+                    <a href="@Url.Action("AddDishes", "Restaurant")" class="small-box-footer">
+                        Adicionar <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <h3>Gerenciar</h3>
+                        <p>Ingredientes</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-cubes"></i>
+                    </div>
+                    <a href="@Url.Action("ShowIngredients", "Restaurant")" class="small-box-footer">
+                        Gerenciar <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <h3>Adicionar</h3>
+                        <p>Ingredientes</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-plus-circle"></i>
+                    </div>
+                    <a href="@Url.Action("AddIngredient", "Restaurant")" class="small-box-footer">
+                        Adicionar <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <h3>Adicionar</h3>
+                        <p>Ingrediente em Prato</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-cart-arrow-down"></i>
+                    </div>
+                    <a href="@Url.Action("InserirIngrediente", "Restaurant")" class="small-box-footer">
+                        Adicionar <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            @*<div class="col-lg-4 col-xs-6">
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <h3>Relatórios</h3>
+                        <p>de Pedidos</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <a href="@Url.Action("ShowReports", "Restaurant")" class="small-box-footer">
+                        Ver <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>*@
+
+
+            <!-- ./col -->
+        </div>
+        <!-- /.row -->
+
+
+
+
+      
+
+
+        <div class="row">
+           
+      
+            @*<div class="col-md-3 col-sm-6 col-xs-12">
+                <a href="@Url.Action("AtividadeIndex", "ExportPDF")">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-olive"><i class="fa fa-user"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Relatório</span>
+                            <span class="info-box-number">Por Usuário</span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </a>
+            </div>*@
+
+        </div>
+
+
+    </section>
+</div>

@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Dishes" EntityType="Model1.Dishes" />
+    <EntitySet Name="Ingredients" EntityType="Model1.Ingredients" />
+    <EntitySet Name="Pedido" EntityType="Model1.Pedido" />
+    <EntitySet Name="Pessoa" EntityType="Model1.Pessoa" />
+    <EntitySet Name="Profile" EntityType="Model1.Profile" />
+    <EntitySet Name="Restaurants" EntityType="Model1.Restaurants" />
+    <EntitySet Name="TipoPessoa" EntityType="Model1.TipoPessoa" />
+    <EntitySet Name="Users" EntityType="Model1.Users" />
+    <AssociationSet Name="FK_Dishes_Restaurants" Association="Model1.FK_Dishes_Restaurants">
+      <End Role="Restaurants" EntitySet="Restaurants" />
+      <End Role="Dishes" EntitySet="Dishes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pedido_Dishes" Association="Model1.FK_Pedido_Dishes">
+      <End Role="Dishes" EntitySet="Dishes" />
+      <End Role="Pedido" EntitySet="Pedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pedido_Users" Association="Model1.FK_Pedido_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Pedido" EntitySet="Pedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pessoa_Users" Association="Model1.FK_Pessoa_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Pessoa" EntitySet="Pessoa" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Restauran__IdUse__49C3F6B7" Association="Model1.FK__Restauran__IdUse__49C3F6B7">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Restaurants" EntitySet="Restaurants" />
+    </AssociationSet>
+    <EntitySet Name="IngredientOnAPlate" EntityType="Model1.IngredientOnAPlate" />
+    <AssociationSet Name="FK_IngredientOnAPlate_Dishes" Association="Model1.FK_IngredientOnAPlate_Dishes">
+      <End Role="Dishes" EntitySet="Dishes" />
+      <End Role="IngredientOnAPlate" EntitySet="IngredientOnAPlate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IngredientOnAPlate_Ingredients" Association="Model1.FK_IngredientOnAPlate_Ingredients">
+      <End Role="Ingredients" EntitySet="Ingredients" />
+      <End Role="IngredientOnAPlate" EntitySet="IngredientOnAPlate" />
+    </AssociationSet>
+    <EntitySet Name="Category" EntityType="Model1.Category" />
+    <AssociationSet Name="FK_Dishes_Category" Association="Model1.FK_Dishes_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Dishes" EntitySet="Dishes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ingredients_Restaurants" Association="Model1.FK_Ingredients_Restaurants">
+      <End Role="Restaurants" EntitySet="Restaurants" />
+      <End Role="Ingredients" EntitySet="Ingredients" />
+    </AssociationSet>
+    <EntitySet Name="Administrators" EntityType="Model1.Administrators" />
+    <AssociationSet Name="FK_Administrators_Users" Association="Model1.FK_Administrators_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Administrators" EntitySet="Administrators" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Dishes">
+    <Key>
+      <PropertyRef Name="IdDish" />
+    </Key>
+    <Property Name="IdDish" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="IdRestaurant" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="IsOnMenu" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Restaurants" Relationship="Model1.FK_Dishes_Restaurants" FromRole="Dishes" ToRole="Restaurants" />
+    <NavigationProperty Name="Pedido" Relationship="Model1.FK_Pedido_Dishes" FromRole="Dishes" ToRole="Pedido" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="IngredientOnAPlate" Relationship="Model1.FK_IngredientOnAPlate_Dishes" FromRole="Dishes" ToRole="IngredientOnAPlate" />
+    <Property Name="IdCategory" Type="Int32" />
+    <NavigationProperty Name="Category" Relationship="Model1.FK_Dishes_Category" FromRole="Dishes" ToRole="Category" />
+  </EntityType>
+  <EntityType Name="Ingredients">
+    <Key>
+      <PropertyRef Name="IdIngredient" />
+    </Key>
+    <Property Name="IdIngredient" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="IngredientOnAPlate" Relationship="Model1.FK_IngredientOnAPlate_Ingredients" FromRole="Ingredients" ToRole="IngredientOnAPlate" />
+    <Property Name="IdRestaurant" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Restaurants" Relationship="Model1.FK_Ingredients_Restaurants" FromRole="Ingredients" ToRole="Restaurants" />
+  </EntityType>
+  <EntityType Name="Pedido">
+    <Key>
+      <PropertyRef Name="IdPedido" />
+    </Key>
+    <Property Name="IdPedido" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdUser" Type="Int32" Nullable="false" />
+    <Property Name="IdDish" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Dishes" Relationship="Model1.FK_Pedido_Dishes" FromRole="Pedido" ToRole="Dishes" />
+    <NavigationProperty Name="Users" Relationship="Model1.FK_Pedido_Users" FromRole="Pedido" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Pessoa">
+    <Key>
+      <PropertyRef Name="IdPessoa" />
+    </Key>
+    <Property Name="IdPessoa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdUser" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Users" Relationship="Model1.FK_Pessoa_Users" FromRole="Pessoa" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Profile">
+    <Key>
+      <PropertyRef Name="IdProfile" />
+    </Key>
+    <Property Name="IdProfile" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Restaurants">
+    <Key>
+      <PropertyRef Name="IdRestaurant" />
+    </Key>
+    <Property Name="IdRestaurant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdUser" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="StreetAddress" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Dishes" Relationship="Model1.FK_Dishes_Restaurants" FromRole="Restaurants" ToRole="Dishes" />
+    <NavigationProperty Name="Users" Relationship="Model1.FK__Restauran__IdUse__49C3F6B7" FromRole="Restaurants" ToRole="Users" />
+    <NavigationProperty Name="Ingredients" Relationship="Model1.FK_Ingredients_Restaurants" FromRole="Restaurants" ToRole="Ingredients" />
+  </EntityType>
+  <EntityType Name="TipoPessoa">
+    <Key>
+      <PropertyRef Name="IdTipoPessoa" />
+    </Key>
+    <Property Name="IdTipoPessoa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="IdUser" />
+    </Key>
+    <Property Name="IdUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Profile" Type="Int32" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Pedido" Relationship="Model1.FK_Pedido_Users" FromRole="Users" ToRole="Pedido" />
+    <NavigationProperty Name="Pessoa" Relationship="Model1.FK_Pessoa_Users" FromRole="Users" ToRole="Pessoa" />
+    <NavigationProperty Name="Restaurants" Relationship="Model1.FK__Restauran__IdUse__49C3F6B7" FromRole="Users" ToRole="Restaurants" />
+    <NavigationProperty Name="Administrators" Relationship="Model1.FK_Administrators_Users" FromRole="Users" ToRole="Administrators" />
+  </EntityType>
+  <Association Name="FK_Dishes_Restaurants">
+    <End Type="Model1.Restaurants" Role="Restaurants" Multiplicity="1" />
+    <End Type="Model1.Dishes" Role="Dishes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restaurants">
+        <PropertyRef Name="IdRestaurant" />
+      </Principal>
+      <Dependent Role="Dishes">
+        <PropertyRef Name="IdRestaurant" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pedido_Dishes">
+    <End Type="Model1.Dishes" Role="Dishes" Multiplicity="1" />
+    <End Type="Model1.Pedido" Role="Pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dishes">
+        <PropertyRef Name="IdDish" />
+      </Principal>
+      <Dependent Role="Pedido">
+        <PropertyRef Name="IdDish" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pedido_Users">
+    <End Type="Model1.Users" Role="Users" Multiplicity="1" />
+    <End Type="Model1.Pedido" Role="Pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="IdUser" />
+      </Principal>
+      <Dependent Role="Pedido">
+        <PropertyRef Name="IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pessoa_Users">
+    <End Type="Model1.Users" Role="Users" Multiplicity="1" />
+    <End Type="Model1.Pessoa" Role="Pessoa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="IdUser" />
+      </Principal>
+      <Dependent Role="Pessoa">
+        <PropertyRef Name="IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Restauran__IdUse__49C3F6B7">
+    <End Type="Model1.Users" Role="Users" Multiplicity="1" />
+    <End Type="Model1.Restaurants" Role="Restaurants" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="IdUser" />
+      </Principal>
+      <Dependent Role="Restaurants">
+        <PropertyRef Name="IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="IngredientOnAPlate">
+    <Key>
+      <PropertyRef Name="IdIngredientOnAPlate" />
+    </Key>
+    <Property Name="IdIngredientOnAPlate" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdDish" Type="Int32" Nullable="false" />
+    <Property Name="IdIngredient" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Dishes" Relationship="Model1.FK_IngredientOnAPlate_Dishes" FromRole="IngredientOnAPlate" ToRole="Dishes" />
+    <NavigationProperty Name="Ingredients" Relationship="Model1.FK_IngredientOnAPlate_Ingredients" FromRole="IngredientOnAPlate" ToRole="Ingredients" />
+  </EntityType>
+  <Association Name="FK_IngredientOnAPlate_Dishes">
+    <End Type="Model1.Dishes" Role="Dishes" Multiplicity="1" />
+    <End Type="Model1.IngredientOnAPlate" Role="IngredientOnAPlate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dishes">
+        <PropertyRef Name="IdDish" />
+      </Principal>
+      <Dependent Role="IngredientOnAPlate">
+        <PropertyRef Name="IdDish" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IngredientOnAPlate_Ingredients">
+    <End Type="Model1.Ingredients" Role="Ingredients" Multiplicity="1" />
+    <End Type="Model1.IngredientOnAPlate" Role="IngredientOnAPlate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ingredients">
+        <PropertyRef Name="IdIngredient" />
+      </Principal>
+      <Dependent Role="IngredientOnAPlate">
+        <PropertyRef Name="IdIngredient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="IdCategory" />
+    </Key>
+    <Property Name="IdCategory" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Dishes" Relationship="Model1.FK_Dishes_Category" FromRole="Category" ToRole="Dishes" />
+  </EntityType>
+  <Association Name="FK_Dishes_Category">
+    <End Type="Model1.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="Model1.Dishes" Role="Dishes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="IdCategory" />
+      </Principal>
+      <Dependent Role="Dishes">
+        <PropertyRef Name="IdCategory" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ingredients_Restaurants">
+    <End Type="Model1.Restaurants" Role="Restaurants" Multiplicity="1" />
+    <End Type="Model1.Ingredients" Role="Ingredients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restaurants">
+        <PropertyRef Name="IdRestaurant" />
+      </Principal>
+      <Dependent Role="Ingredients">
+        <PropertyRef Name="IdRestaurant" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Administrators">
+    <Key>
+      <PropertyRef Name="IdAdmin" />
+    </Key>
+    <Property Name="IdAdmin" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdUser" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Users" Relationship="Model1.FK_Administrators_Users" FromRole="Administrators" ToRole="Users" />
+  </EntityType>
+  <Association Name="FK_Administrators_Users">
+    <End Type="Model1.Users" Role="Users" Multiplicity="1" />
+    <End Type="Model1.Administrators" Role="Administrators" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="IdUser" />
+      </Principal>
+      <Dependent Role="Administrators">
+        <PropertyRef Name="IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,69 @@
+﻿@model List<ProjetoAgili.Models.DishesModel>
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    @Html.Partial("../Users/Partials/_HeaderJSPartial")
+
+</head>
+
+<body>
+
+    @Html.Partial("../Users/Partials/_HeaderPartial")
+
+    <section id="content" style="width: 100%;">
+
+        <div class="content-wrap">
+
+            <div class="container clearfix">
+                <div class="row">
+
+                    <div class="col-md-9 col-sm-8" style="margin-left:10%;">
+                        @*<h6 class="text-bold text-uppercase mb-10">Mais Pedidos</h6>*@
+                        <div class="row product-list">
+
+                            @foreach (var m in Model)
+                            {
+                                <div class="col-md-4 col-sm-6">
+                                    <article class="product-card">
+                                        <div class="product-offer hot-offer">@m.RestaurantName</div>
+                                        <div class="product-image two-sided" style="width: 250px; height: 250px;">
+                                            <img src="@Url.Action("RetrieveImage", "Users", new { id = m.IdDish })" onerror="this.src='http://www.rederemo.org/html/img/nao_disponivel.jpg'" alt="">
+                                            <img src="@Url.Action("RetrieveImage", "Users", new { id = m.IdDish })" onerror="this.src='http://www.rederemo.org/html/img/nao_disponivel.jpg'" alt="">
+                                        </div>
+                                        <div class="product-detail">
+                                            <h4><a href="@Url.Action("ShowDish", "Users", new { id = m.IdDish })">@m.Name</a></h4>
+                                            <span class="price">R$ @m.Price</span>
+                                            @*<button class="add-to-cart"><i class="fa fa-angle-right"></i> Ver Opções</button>*@
+                                            @Html.ActionLink("Pedir", "ShowDish", new { id = m.IdDish }, new { @class = "add-to-cart" })
+                                        </div>
+                                    </article>
+                                </div>
+                            }
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            @Html.Partial("../Users/Partials/_FooterPartial")
+
+        </div>
+    </section>
+
+    <div id="gotoTop" class="fa fa-angle-up hidden-md"></div>
+
+
+
+    @Html.Partial("../Users/Partials/_FooterJSPartial")
+
+
+</body>
+</html>

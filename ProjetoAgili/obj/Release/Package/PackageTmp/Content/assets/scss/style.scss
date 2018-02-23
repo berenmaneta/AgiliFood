@@ -1,0 +1,47 @@
+// Bourbon
+@import 'inc/bourbon/bourbon';  // bourbon plugin
+
+// My variables, mixins and colors
+@import "inc/mixins"; // main mixins
+@import "inc/colors"; // colors variables
+@import "inc/variables"; // other variables
+
+// Core Styles
+@import "core/typography"; // typography styles
+
+// Sections
+@import "sections/add-nav"; // additional navbar section
+@import "sections/header"; // navigation section
+@import "sections/slider"; // slider section
+@import "sections/breadcrumbs"; // breadcrumbs section
+@import "sections/content"; // content section
+@import "sections/parallax"; // parallax sections
+@import "sections/portfolio"; // portfolio section
+@import "sections/sidebar"; // sidebar section
+@import "sections/footer"; // footer section
+@import "sections/checkout"; // footer section
+
+// Shortcodes
+@import "shortcodes/buttons"; // buttons shortcodes
+@import "shortcodes/dividers"; // dividers & lines shortcodes
+@import "shortcodes/features"; // features shortcodes
+@import "shortcodes/post-entry"; // post entry shortcodes
+@import "shortcodes/thumbnails"; // thumbnails shortcodes
+@import "shortcodes/boxes"; // boxes shortcodes
+@import "shortcodes/form-elements"; // form elements shortcodes
+@import "shortcodes/social-icons"; // social icons shortcodes
+@import "shortcodes/counter"; // counter elements shortcodes
+@import "shortcodes/progress"; // progress elements shortcodes
+@import "shortcodes/price-plans"; // price plans shortcodes
+@import "shortcodes/tabs"; // tabs shortcodes
+@import "shortcodes/panels"; // tabs shortcodes
+@import "shortcodes/pagination"; // pagination shortcodes
+@import "shortcodes/comments"; // pagination shortcodes
+@import "shortcodes/products"; // products shortcodes
+
+
+// Shared
+@import "shared/global"; // global shared settings
+@import "shared/print"; // print css
+@import "shared/responsive"; // responsive css
+

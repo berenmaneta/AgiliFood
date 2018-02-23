@@ -1,0 +1,129 @@
+﻿<div class="row">
+    <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-aqua">
+            <div class="inner">
+                <h3>Inserir</h3>
+                <p>Aluno</p>
+            </div>
+            <div class="icon">
+                <i class="fa fa-user-plus"></i>
+            </div>
+            <a href="@Url.Action("Inserir", "Aluno")" class="small-box-footer">
+                Inserir <i class="fa fa-arrow-circle-right"></i>
+            </a>
+        </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-green">
+            <div class="inner">
+                <h3>Inserir</h3>
+                <p>Atividade</p>
+            </div>
+            <div class="icon">
+                <i class="fa fa-soccer-ball-o"></i>
+            </div>
+            <a href="@Url.Action("Inserir", "Atividade")" class="small-box-footer">
+                Inserir <i class="fa fa-arrow-circle-right"></i>
+            </a>
+        </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-yellow">
+            <div class="inner">
+                <h3>Registrar</h3>
+                <p>Chamada</p>
+            </div>
+            <div class="icon">
+                <i class="fa fa-sticky-note-o"></i>
+            </div>
+            <a href="@Url.Action("Chamada", "Chamada")" class="small-box-footer">
+                Registrar <i class="fa fa-arrow-circle-right"></i>
+            </a>
+        </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-red">
+            <div class="inner">
+                <h3>Inserir Aluno</h3>
+                <p>Em Atividade</p>
+            </div>
+            <div class="icon">
+                <i class="fa fa-calendar-plus-o"></i>
+            </div>
+            <a href="@Url.Action("InserirAluno", "Atividade")" class="small-box-footer">
+                Inserir <i class="fa fa-arrow-circle-right"></i>
+            </a>
+        </div>
+    </div>
+    <!-- ./col -->
+</div>
+<!-- /.row -->
+
+
+
+
+<div class="row">
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <a href="@Url.Action("ShowAluno", "Aluno")">
+            <div class="info-box">
+                <span class="info-box-icon bg-aqua"><i class="fa fa-edit"></i></span>
+                <div class="info-box-content">
+                    <span class="info-box-text">Editar</span>
+                    <span class="info-box-number">Alunos</span>
+                </div>
+                <!-- /.info-box-content -->
+            </div></a>
+            <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <a href="@Url.Action("ShowAtividades", "Atividade")">
+            <div class="info-box">
+                <span class="info-box-icon bg-green"><i class="fa fa-edit"></i></span>
+                <div class="info-box-content">
+                    <span class="info-box-text">Editar</span>
+                    <span class="info-box-number">Atividade</span>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+            </a>
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <a href="@Url.Action("AddOcorrencia", "Ocorrencia")">
+            <div class="info-box">
+                <span class="info-box-icon bg-yellow"><i class="fa fa-commenting-o"></i></span>
+                <div class="info-box-content">
+                    <span class="info-box-text">Registrar</span>
+                    <span class="info-box-number">Ocorrências</span>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </a>
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <a href="">
+            <div class="info-box">
+                <span class="info-box-icon bg-red"><i class="fa fa-lightbulb-o"></i></span>
+                <div class="info-box-content">
+                    <span class="info-box-text">Adicionar</span>
+                    <span class="info-box-number">Lembretes</span>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </a>
+    </div>
+    <!-- /.col -->
+</div>
+<!-- /.row -->

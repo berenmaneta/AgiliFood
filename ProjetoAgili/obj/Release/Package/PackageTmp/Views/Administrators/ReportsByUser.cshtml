@@ -1,0 +1,57 @@
+﻿@model ProjetoAgili.Models.ShowOrdersModel
+
+@{
+    Layout = "../Layout/Index.cshtml";
+}
+
+
+<div class="content-wrapper" style="overflow:hidden;">
+    <section class="content-header">
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">Relatório de Usuário - @Model.Mes</h3>
+            </div>
+
+
+            <div class="box-body">
+                <table id="example1" class="table table-bordered table-striped" style="width: 97%;">
+                    <thead>
+                        <tr>
+                            <th>Email</th>
+                            <th>Restaurante</th>
+                            <th>Prato</th>
+                            <th>Data</th>
+                            <th>Total</th>
+                            @*<th></th>*@
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.lista)
+                        {
+                        <tr id="@item.IdUser">
+                            <td>@item.UserName</td>
+                            <td>@item.RestaurantName</td>
+                            <td>@item.DishName</td>
+                            <td>@item.Date</td>
+                            <td>R$ @item.Price.ToString("0.00")</td>
+                            @*<td><a href="@Url.Action("PrintReport", "Users", new { id = @item.IdUser })" class="btn-success btn-sm">Detalhes</a></td>*@
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+                <h4 style="margin-left:0%;"><b>TOTAL: R$ </b>@Model.Total.ToString("0.00")</h4>
+            </div>
+            
+
+        </div>
+
+    </section>
+</div>
+
+
+<div id="gotoTop" class="fa fa-angle-up hidden-md"></div>
+
+
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")

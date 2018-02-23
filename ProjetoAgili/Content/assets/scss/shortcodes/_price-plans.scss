@@ -1,0 +1,117 @@
+//===========================================================
+
+// Minovate - shortcodes/price-plans.scss
+
+//===========================================================
+
+.price-plans {
+  div[class^="col"] {
+    padding: 0;
+
+    &:first-of-type {
+      padding-left: 15px;
+      padding-right: 0;
+    }
+
+    &:last-of-type {
+      padding-left: 0;
+      padding-right: 15px;
+    }
+
+  }
+}
+
+.price-plan {
+  margin-top: 30px;
+  background-color: #f9f9f9;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+  z-index: 9;
+
+  .plan-type {
+    background-color: #fdfdfd;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+
+    h4 {
+      margin: 0;
+      text-transform: uppercase;
+
+      +span {
+        text-transform: uppercase;
+        font-weight: $font-weight-light;
+        color: $font-color-50;
+      }
+    }
+  }
+
+  .plan-price {
+    padding: 30px 0;
+
+    .unit {
+      font-size: 24px;
+      position: relative;
+      top: -10px;
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .price {
+      font-size: 58px;
+
+      +span {
+        font-size: 38px;
+      }
+    }
+
+    .period {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-light;
+      color: $font-color-50;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      margin: 30px auto 0;
+      width: 60px;
+      border-top: 1px solid #ccc;
+    }
+  }
+
+  .plan-features {
+    padding-bottom: 20px;
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      color: $font-color-70;
+      >li {
+        line-height: 2.247;
+      }
+    }
+  }
+
+  .plan-actions {
+    padding: 10px 0 20px;
+  }
+
+  &.selected {
+    background-color: white;
+    z-index: 11;
+    margin-right: -3px;
+    margin-left: -3px;
+    top: -21px;
+
+    .plan-type {
+      background-color: white;
+    }
+
+    .plan-actions {
+      padding-bottom: 41px;
+    }
+  }
+}

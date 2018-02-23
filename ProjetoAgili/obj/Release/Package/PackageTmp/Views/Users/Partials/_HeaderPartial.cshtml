@@ -1,0 +1,32 @@
+﻿
+<nav id="add-navbar">
+    <div class="container clearfix">
+        <ul class="pull-right" style="margin-right: 14%;">
+            <li><a href="/Users/MyAccount">Minha Conta</a></li>
+            <li><a href="/Home/Checkout">Sair</a></li>
+        </ul>
+    </div>
+</nav>
+
+<header id="header" class="dark">
+    <div id="header-wrap">
+        <div class="container clearfix">
+            <div id="main-navbar-toggle"><i class="fa fa-bars"></i></div>
+
+            <div id="branding">
+                <a href="/Users/index" class="brand-normal"><img src="~/Content/assets/images/logo-agilifood.png" alt="ÁgiliFood"></a>
+                <a href="/Users/index" class="brand-retina"><img src="~/Content/assets/images/logo-agilifood.png" alt="ÁgiliFood"></a>
+            </div>
+
+            <nav id="main-navbar">
+                <ul>
+                    <li class="active"><a href="/Users/Index">Restaurantes</a></li>
+                    <li><a href="@Url.Action("ShowCategories", "Users", new { id = 1 })">Pratos</a></li>
+                    <li><a href="@Url.Action("ShowCategories", "Users", new { id = 2 })">Sanduíches</a></li>
+                    <li><a href="@Url.Action("ShowCategories", "Users", new { id = 3 })">Sobremesas</a></li>
+                    <li><a href="@Url.Action("ShowCategories", "Users", new { id = 4 })">Bebidas</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>

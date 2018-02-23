@@ -1,0 +1,57 @@
+﻿<header class="main-header">
+    <!-- Logo -->
+    <a href="#" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>Á</b>gili</span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b>Ágili</b>Food</span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+
+                <!-- User Account: style can be found in dropdown.less -->
+                <li class="dropdown user user-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img class="user-image" src="@Url.Action("RetrieveImage", "Home")" onerror="this.src='http://www.rederemo.org/html/img/nao_disponivel.jpg'" />
+                        <span class="hidden-xs">@Session["Username"]</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- User image -->
+                        <li class="user-header">
+                            <img class="img-circle" src="@Url.Action("RetrieveImage", "Home")" onerror="this.src='http://www.rederemo.org/html/img/nao_disponivel.jpg'" />
+                            <p>
+                                @Session["Name"] @Session["LastName"]
+                                <small>@Session["PresentSentence"]</small>
+                            </p>
+                        </li>
+
+                        <!-- Menu Footer-->
+                        <li class="user-footer">
+                            <div class="pull-left">
+                                <a href="@Url.Action("MyAccount","Administrators")" class="btn btn-default btn-flat">Minha Conta</a>
+                            </div>
+                            <div class="pull-right">
+                                @using (Html.BeginForm("Checkout", "Home"))
+                                {
+                                    <input class="btn btn-default btn-flat" type="submit" value="Sair" />
+                                }
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                @*<li>
+                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                    </li>*@
+            </ul>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,48 @@
+//===========================================================
+
+// Minovate - sections/breadcrumbs.scss
+
+//===========================================================
+
+#breadcrumbs {
+  background-color: #f5f5f5;
+  padding: 40px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+  >.container {
+    position: relative;
+  }
+
+  h1 {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: $font-weight-bold;
+    margin: 0;
+    +span {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-light;
+      color: $font-color-60;
+    }
+  }
+
+  .breadcrumb {
+    position: absolute;
+    right: 0;
+    top: 20px;
+    background: transparent;
+    padding: 0;
+  }
+
+  &.breadcrumbs-sm {
+    padding: 15px 0;
+    h1 {
+      font-size: $font-size-lg;
+      +span {
+        display: none;
+      }
+    }
+    .breadcrumb {
+      top: 2px;
+    }
+  }
+}

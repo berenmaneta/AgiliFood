@@ -1,0 +1,83 @@
+﻿@model ProjetoAgili.Models.DishesModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    @Html.Partial("../Users/Partials/_HeaderJSPartial")
+</head>
+
+<body>
+
+    @Html.Partial("../Users/Partials/_HeaderPartial")
+
+    <section id="content">
+        <div class="content-wrap">
+            <div class="container clearfix" style="margin-left:10%;">
+                <div class="row">
+                    <div class="col-md-9 col-sm-8">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <article class="product-view">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="product-image">
+                                                <div class="row">
+                                                    <h4 style="margin-left:5%;">@Model.Name</h4>
+                                    <div class="col-md-4" style="width: 250px; height: 250px;">
+                                        @*INSERIR IMAGEM DO PRATO AQUI*@
+                                        <img src="@Url.Action("RetrieveImage", "Users", new { id = Model.IdDish })" onerror="this.src='http://www.rederemo.org/html/img/nao_disponivel.jpg'"  alt="" class="img-responsive">
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+
+                                    <div class="col-md-7 product-details">
+                                        <div class="price-block">
+                                            @*INSERIR PREÇO DO PRATO AQUI*@
+                                            <p class="price">R$ @Model.Price</p>
+                                        </div>
+
+                                        <div class="product-desc">
+                                            @*INSERIR DESCRIÇÃO DO PRATO AQUI*@
+                                            <p>@Model.Description.</p>
+
+                                            @*INSERIR INGREDIENTES AQUI*@
+                                            <ul class="list-unstyled">
+                                                @foreach (var ing in Model.Ingredients)
+            {
+                                    <li><i class="fa fa-caret-right"></i> @ing.Name</li>
+}
+                                            </ul>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="add-to-cart" style="margin-right:5%;">
+                                        @Html.ActionLink("Confirmar Pedido", "ConfirmOrder", "Users", new { id = Model.IdDish }, new { @class = "myBtn myBtn-border myBtn-rounded myBtn-sm myBtn-midlight pull-right" })
+                                    </div>
+
+
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            @Html.Partial("../Users/Partials/_FooterPartial")
+
+        </div>
+    </section>
+
+
+    <div id="gotoTop" class="fa fa-angle-up hidden-md"></div>
+
+    @Html.Partial("../Users/Partials/_FooterJSPartial")
+
+</body>
+</html>

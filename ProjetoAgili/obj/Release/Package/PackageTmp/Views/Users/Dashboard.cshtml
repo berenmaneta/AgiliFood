@@ -1,0 +1,234 @@
+﻿
+@{
+    Layout = "../Layout/Index.cshtml";
+}
+
+<div class="content-wrapper" style="overflow:hidden;">
+    <section class="content-header">
+        <div class="row">
+            <div class="col-lg-4 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <h3>Aluno</h3>
+                        <p>Inserir</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-user-plus"></i>
+                    </div>
+                    <a href="@Url.Action("Inserir", "Aluno")" class="small-box-footer">
+                        Inserir <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-4 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <h3>Atividade</h3>
+                        <p>Inserir</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-soccer-ball-o"></i>
+                    </div>
+                    <a href="@Url.Action("Inserir", "Atividade")" class="small-box-footer">
+                        Inserir <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-4 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-yellow">
+                    <div class="inner">
+                        <h3>Chamada</h3>
+                        <p>Registrar</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-hand-spock-o"></i>
+                    </div>
+                    <a href="@Url.Action("Chamada", "Chamada")" class="small-box-footer">
+                        Registrar <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-4 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-teal-gradient">
+                    <div class="inner">
+                        <h3>Ocorrência</h3>
+                        <p>Inserir</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-calendar-plus-o"></i>
+                    </div>
+                    <a href="@Url.Action("Inserir", "Ocorrencia")" class="small-box-footer">
+                        Inserir <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-blue-gradient">
+                    <div class="inner">
+                        <h3>Lembrete</h3>
+                        <p>Inserir</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-lightbulb-o"></i>
+                    </div>
+                    <a href="@Url.Action("Inserir", "Lembrete")" class="small-box-footer">
+                        Inserir <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-red-gradient">
+                    <div class="inner">
+                        <h3>Inserir Aluno</h3>
+                        <p>Em Atividade</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-calendar-plus-o"></i>
+                    </div>
+                    <a href="@Url.Action("InserirAluno", "Atividade")" class="small-box-footer">
+                        Inserir <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- ./col -->
+        </div>
+        <!-- /.row -->
+
+
+
+
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <a href="@Url.Action("ShowAluno", "Aluno")">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-aqua"><i class="fa fa-edit"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Editar</span>
+                            <span class="info-box-number">Alunos</span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                </a>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <a href="@Url.Action("ShowAtividades", "Atividade")">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-green"><i class="fa fa-edit"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Editar</span>
+                            <span class="info-box-number">Atividade</span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </a>
+            </div>
+            <!-- /.col -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <a href="@Url.Action("VerChamadas", "Chamada")">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-yellow"><i class="fa fa-hand-paper-o"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Visualizar</span>
+                            <span class="info-box-number">Chamadas</span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </a>
+            </div>
+            <!-- /.col -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <a href="@Url.Action("ShowOcorrencias", "Ocorrencia")">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-teal-gradient"><i class="fa fa-calendar"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Visualizar</span>
+                            <span class="info-box-number">Ocorrências</span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </a>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+
+
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <a href="@Url.Action("ShowLembretes", "Lembrete")">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-blue-gradient"><i class="fa fa-lightbulb-o"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Editar</span>
+                            <span class="info-box-number">Lembretes</span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                </a>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+       
+           <div class="col-md-3 col-sm-6 col-xs-12">
+                <a href="@Url.Action("AlunoIndex", "ExportPDF")">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-olive-active"><i class="fa fa-calculator"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Relatório</span>
+                            <span class="info-box-number">Aluno</span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </a>
+            </div>
+            <!-- /.col -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <a href="@Url.Action("AtividadeIndex", "ExportPDF")">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-olive"><i class="fa fa-calculator"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Relatório</span>
+                            <span class="info-box-number">Atividade</span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </a>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <a href="#">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-aqua-active"><i class="fa fa-question"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Gerenciar</span>
+                            <span class="info-box-number">Questionários</span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </a>
+            </div>
+            <!-- /.col -->
+        </div>
+
+
+    </section>
+</div>

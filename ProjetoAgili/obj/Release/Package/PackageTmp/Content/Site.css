@@ -1,0 +1,60 @@
+﻿
+
+/* Mobile First */
+
+.form-password
+{
+    width:20% !important;
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1025px) and (orientation:portrait) {
+
+    .form-password
+    {
+        width:50% !important;
+    }
+   
+}
+
+
+@media only screen and (min-width: 481px) and (max-width: 1025px) and (orientation:landscape) {
+    
+    .form-password
+    {
+         width:50% !important;
+    }
+  
+}
+
+.column-report {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+.column2-report {
+    float: left;
+    width: 70%;
+    padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row-report:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.report-center{
+    text-align:center;
+}
+
+.container-report-img{
+    width:15%; 
+    height:50px;
+}
+
+.image-report{
+    max-height:100%;
+    max-width:100%;
+}

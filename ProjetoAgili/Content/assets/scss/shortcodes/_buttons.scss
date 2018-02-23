@@ -1,0 +1,324 @@
+//===========================================================
+
+// Minovate - shortcodes/buttons.scss
+
+//===========================================================
+
+
+//======== myButtons ==========
+
+.myBtn {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0 20px;
+  font-size: 13px;
+  height: 40px;
+  line-height: 40px;
+  background-color: $theme-color;
+  color: #fff;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+  font-family: $font-raleway;
+
+  &:hover {
+    background-color: darken($theme-color, 10%);
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+  }
+
+  >span {
+    margin: 0 5px;
+  }
+}
+
+body:not(.device-touch) {
+  .myBtn {
+    @include transition(all .2s ease-in-out);
+  }
+}
+
+//======== myButtons color variations ==========
+
+.myBtn {
+  &.myBtn-dark {
+    background-color: #444;
+    &:hover {
+      background-color: $theme-color;
+    }
+  }
+  &.myBtn-light {
+    background-color: #eee;
+    color: $font-color;
+    text-shadow: none !important;
+
+    &:hover {
+      color: $theme-color;
+      background-color: white;
+    }
+  }
+  &.myBtn-white {
+    background-color: #fff;
+    color: $font-color;
+    text-shadow: none !important;
+
+    &:hover {
+      color: $theme-color;
+      background-color: white;
+    }
+  }
+  &.myBtn-midlight {
+    background-color: #ccc;
+    text-shadow: none !important;
+
+    &:hover {
+      color: $theme-color;
+      background-color: #eee;
+    }
+  }
+  &.myBtn-lightred {
+    background-color: $lightred;
+    &:hover {
+      background-color: $darker-lightred;
+    }
+  }
+  &.myBtn-success {
+    background-color: $brand-success;
+    &:hover {
+      background-color: $darker-success;
+    }
+  }
+}
+
+//======== myButtons size variations ==========
+
+.myBtn {
+  &.myBtn-xs {
+    padding: 0 12px;
+    font-size: $font-size-xs;
+    height: 26px;
+    line-height: 26px;
+  }
+  &.myBtn-sm {
+    padding: 0 15px;
+    font-size: $font-size-sm;
+    height: 34px;
+    line-height: 34px;
+  }
+  &.myBtn-lg {
+    padding: 0 24px;
+    font-size: 16px;
+    height: 46px;
+    line-height: 46px;
+  }
+  &.myBtn-xl {
+    padding: 0 30px;
+    font-size: $font-size-lg;
+    letter-spacing: 2px;
+    height: 52px;
+    line-height: 52px;
+  }
+}
+
+//======== myButtons border variation ==========
+
+.myBtn {
+  &.myBtn-border {
+    border: 2px solid #444;
+    background-color: transparent;
+    color: $font-color;
+    line-height: 36px;
+    font-weight: $font-weight-bold;
+    text-shadow: none;
+
+    &.myBtn-xs {
+      line-height: 22px;
+    }
+    &.myBtn-sm {
+      line-height: 30px;
+    }
+    &.myBtn-lg {
+      line-height: 42px;
+    }
+    &.myBtn-xl {
+      line-height: 48px;
+    }
+
+    &:hover {
+      background-color: #444;
+      color: #fff;
+      border-color: transparent !important;
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+    }
+
+    &.myBtn-light {
+      border-color: #fff;
+      color: #fff;
+
+      &:hover {
+        background-color: #fff;
+        color: $theme-color;
+        text-shadow: none;
+      }
+    }
+
+    &.myBtn-midlight {
+      border-color: #ebebeb;
+
+      &:hover {
+        background-color: $theme-color;
+        color: #fff;
+        text-shadow: none;
+      }
+    }
+
+    &.myBtn-theme {
+      border-color: $theme-color;
+      color: $theme-color;
+
+      &:hover {
+        background-color: $theme-color;
+        color: white;
+      }
+    }
+  }
+  &.myBtn-rounded {
+    border-radius: 2px;
+  }
+}
+
+//======== myButtons 3d variations ==========
+
+.myBtn {
+  &.myBtn-3d {
+    border-radius: 2px;
+    border-bottom: 3px solid rgba(0,0,0,0.15);
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+    &:hover {
+      background-color: $theme-color !important;
+      opacity: 0.8;
+    }
+  }
+  &.myBtn-3d {
+    &.myBtn-light {
+      &:hover {
+        text-shadow: none;
+        color: #333;
+      }
+    }
+  }
+}
+
+//======== myButtons block variations ==========
+
+.myBtn {
+  &.myBtn-block {
+    display: block;
+    margin: 0;
+    padding: 30px 0;
+    height: auto;
+    white-space: normal;
+    font-size: 28px;
+    font-weight: $font-weight-light;
+    text-transform: none;
+  }
+}
+
+//======== plus button ==========
+
+.plus {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  display: block;
+
+  &:before,
+  &:after {
+    content: "";
+    background-color: #e2e2e2;
+    position: absolute;
+    @include transition(all .25s ease);
+  }
+
+  &:before {
+    width: 24px;
+    height: 1px;
+    top: 11px;
+  }
+
+  &:after {
+    width: 1px;
+    height: 24px;
+    left: 11px;
+  }
+
+  &:hover {
+    &:before,
+    &:after {
+      background-color: $theme-color;
+    }
+  }
+}
+
+div[class^="col"] {
+  >.plus {
+    position: absolute;
+    right: -5px;
+    bottom: -20px;
+  }
+}
+
+//tag button
+
+.btn-tag {
+  position: relative;
+  color: $font-color-50;
+  border: 2px solid #f2f2f2;
+  display: inline-block;
+  padding: 2px 5px;
+  @include transition(all 0.25s ease-out );
+  font-size: $font-size-sm;
+  margin-bottom: 5px;
+  margin-right: 3px;
+
+  &:hover {
+    border-color: $theme-color;
+    color: $theme-color;
+
+    &:after {
+      border-left-color: $theme-color;
+    }
+  }
+
+  &:before {
+    content: "";
+    top: 50%;
+    right: -11px;
+    display: block;
+    margin-top: -11px;
+    position: absolute;
+    @include triangle(22px, #fff, right);
+    @include transition(all 0.25s ease-out );
+    z-index: 4;
+  }
+
+  &:after {
+    content: "";
+    top: 50%;
+    right: -14px;
+    z-index: 2;
+    display: block;
+    margin-top: -13px;
+    position: absolute;
+    @include triangle(26px, #f2f2f2, right);
+    @include transition(all 0.25s ease-out );
+  }
+}

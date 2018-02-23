@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "";
+}
+<html>
+<head>
+    @Html.Partial("../Partials/_HeadStylesPartial")
+</head>
+
+<body class="hold-transition skin-blue fixed sidebar-mini">
+
+    <div class="wrapper">
+        @Html.Partial("../Partials/_HeaderPagePartial")
+
+        @Html.Partial("../Partials/_NavTotalPartial")
+
+        @*INSERIR CÓDIGO AQUI*@
+
+        @RenderBody()
+
+
+        @Html.Partial("../Partials/_FooterPartial")
+        <div class="control-sidebar-bg"></div>
+    </div>
+    <!-- ./wrapper -->
+    @Html.Partial("../Partials/_FooterJsPartial")
+</body>
+</html>

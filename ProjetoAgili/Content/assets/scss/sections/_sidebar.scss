@@ -1,0 +1,159 @@
+//===========================================================
+
+// Minovate - sections/sidebar.scss
+
+//===========================================================
+
+.sidebar {
+  .sidebar-widget {
+    margin-bottom: 30px;
+    background-color: white;
+    padding: 20px;
+
+    h6 {
+      color: $font-color;
+    }
+
+    form {
+      margin-bottom: 40px;
+      color: $font-color-50;
+      font-size: 13px;
+    }
+
+    &.nav {
+      >li {
+        border-left: 2px solid #f8f8f8;
+        >a {
+          border-radius: 2px;
+          &:hover {
+            background-color: #f8f8f8;
+          }
+        }
+      }
+    }
+
+    .media-list {
+      .media-body {
+        padding-top: 8px;
+        p {
+          line-height: 1.2!important;
+        }
+        a {
+          color: $font-color;
+          text-transform: uppercase;
+          font-weight: $font-weight-light;
+
+          &:hover {
+            color: $theme-color;
+            text-decoration: underline!important;
+          }
+        }
+        .price {
+          color: $theme-color;
+        }
+      }
+    }
+
+    .product-list {
+      >li {
+        border-bottom: 1px dotted #efefef;
+        padding-bottom: 10px;
+
+        &:last-child {
+          border: 0;
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.sidebar-navigation {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+
+  ul {
+    list-style: none;
+    padding: 0 0 0 15px;
+    margin: 0;
+    background-color: white;
+    display: none;
+
+    li {
+      margin-bottom: 0;
+    }
+  }
+
+  ul ul {
+    li a {
+      text-transform: none;
+    }
+  }
+
+  li {
+    margin-bottom: 2px;
+    position: relative;
+
+    >a {
+      font-weight: $font-weight-light;
+      text-transform: uppercase;
+      color: $font-color;
+      padding: 0 15px 0 30px;
+      line-height: 35px;
+      background-color: white;
+      display: block;
+
+      &:hover {
+        color: $theme-color;
+      }
+    }
+
+    >.dropdown-toggle {
+      position: absolute;
+      background-image: url("../images/icons/sidebar-menu.png");
+      background-position: 0 2px;
+      background-repeat: no-repeat;
+      background-color: transparent;
+      width: 15px;
+      height: 20px;
+      margin-right: 10px;
+      padding: 0;
+      top: 8px;
+      left: 10px;
+
+      &:hover {
+        background-position: -13px 2px;
+      }
+    }
+
+    &.active {
+      >a:hover,
+      >a {
+        color: $theme-color;
+      }
+      >.dropdown-toggle {
+        background-position: -13px 2px;
+      }
+    }
+
+    &.open {
+      >ul {
+        display: block;
+      }
+      >.dropdown-toggle {
+        background-position: 0 -13px;
+
+        &:hover {
+          background-position: -13px -13px;
+        }
+      }
+    }
+
+    &.open.active {
+      >.dropdown-toggle {
+        background-position: -13px -13px;
+      }
+    }
+  }
+}

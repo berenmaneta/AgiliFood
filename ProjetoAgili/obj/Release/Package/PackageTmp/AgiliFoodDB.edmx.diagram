@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="01b7705dfc084537bc37f8e177c2ca86" Name="Diagram1" >
+        <EntityTypeShape EntityType="Model1.Dishes" Width="1.5" PointX="5.25" PointY="8.5" />
+        <EntityTypeShape EntityType="Model1.Ingredients" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model1.Pedido" Width="1.5" PointX="7.5" PointY="6.375" />
+        <EntityTypeShape EntityType="Model1.Pessoa" Width="1.5" PointX="3" PointY="2.75" />
+        <EntityTypeShape EntityType="Model1.Profile" Width="1.5" PointX="2.75" PointY="5.75" />
+        <EntityTypeShape EntityType="Model1.Restaurants" Width="1.5" PointX="3" PointY="8.5" />
+        <EntityTypeShape EntityType="Model1.TipoPessoa" Width="1.5" PointX="5.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Model1.Users" Width="1.5" PointX="0.75" PointY="4.125" />
+        <AssociationConnector Association="Model1.FK_Dishes_Restaurants" />
+        <AssociationConnector Association="Model1.FK_Pedido_Dishes" />
+        <AssociationConnector Association="Model1.FK_Pedido_Users" />
+        <AssociationConnector Association="Model1.FK_Pessoa_Users" />
+        <AssociationConnector Association="Model1.FK__Restauran__IdUse__49C3F6B7" />
+        <EntityTypeShape EntityType="Model1.IngredientOnAPlate" Width="1.5" PointX="8" PointY="3.125" />
+        <AssociationConnector Association="Model1.FK_IngredientOnAPlate_Dishes" />
+        <AssociationConnector Association="Model1.FK_IngredientOnAPlate_Ingredients" />
+        <EntityTypeShape EntityType="Model1.Category" Width="1.5" PointX="8.375" PointY="0.75" />
+        <AssociationConnector Association="Model1.FK_Dishes_Category" />
+        <AssociationConnector Association="Model1.FK_Ingredients_Restaurants" />
+        <EntityTypeShape EntityType="Model1.Administrators" Width="1.5" PointX="3" PointY="0.75" />
+        <AssociationConnector Association="Model1.FK_Administrators_Users" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

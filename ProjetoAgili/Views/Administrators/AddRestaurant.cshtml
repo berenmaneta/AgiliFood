@@ -1,0 +1,70 @@
+﻿@model ProjetoAgili.Models.AddRestaurantModel
+
+@{
+    Layout = "../Layout/Index.cshtml";
+}
+
+
+<div class="content-wrapper" style="overflow:hidden;">
+    <section class="content-header">
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">Inserir Usuário</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            @using (Html.BeginForm("AddRestaurant", "Administrators", FormMethod.Post))
+            {
+
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+
+            <div class="box-body">
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Nome</label>
+                    <div class="col-sm-10">
+                        @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                        @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "Nome" })
+                        <br />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-10">
+                        @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                        @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Email" })
+                        <br />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Endereço</label>
+                    <div class="col-sm-10">
+                        @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                        @Html.TextBoxFor(model => model.StreetAddress, new { @class = "form-control", placeholder = "Endereço" })
+                        <br />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Telefone</label>
+                    <div class="col-sm-10">
+                        @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                        @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", placeholder = "Telefone" })
+                        <br />
+                    </div>
+                </div>
+
+            </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-info pull-right">Inserir</button>
+                </div>
+                <!-- /.box-footer -->
+            }
+        </div>
+    </section>
+</div>
+

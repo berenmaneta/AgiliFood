@@ -1,0 +1,73 @@
+//===========================================================
+
+// Minovate - shortcodes/social-icons.scss
+
+//===========================================================
+
+.social-icon {
+  margin: 0 5px 5px 0;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  text-align: center;
+  line-height:30px;
+  color: #fff;
+
+  position: relative;
+  transform:rotateY(0deg);
+  transition:transform .25s ease-out;
+  transform-style:preserve-3d;
+
+  >div {
+    width: 30px;
+    height: 30px;
+    background: #1e1e1e;
+    position: absolute;
+
+    &.front {
+      transform:translateZ(12px);
+    }
+    &.back {
+      background: $theme-color;
+      transform:rotateY(-100deg) translateZ(10px);
+      color: white;
+    }
+
+  }
+
+  &.social-icon-light {
+    color: $font-color-70;
+    >div {
+      background-color: #f2f2f2;
+    }
+  }
+}
+
+
+/*  Social Media Colors
+	Facebook #3B5998
+	Flickr #FE0883
+	Foursquare #8FD400
+	Google+ #C63D2D
+	Instagram #4E433C
+	Linkedin #4875B4
+	Tumblr #2B4964
+	Twitter #33CCFF
+	Vimeo #86B32D
+	Youtube #FF3333
+	Dribbble #ea4c89
+*/
+.social-icon.social-facebook > .back { background: #3B5998; }
+.social-icon.social-twitter > .back { background: #55ACEE; }
+.social-icon.social-github > .back { background: #f3f3f3; color: #000; }
+.social-icon.social-pinterest > .back { background: #e3262e; }
+.social-icon.social-googleplus > .back { background: #dd4B39; }
+.social-icon.social-skype > .back { background: #12A5F4; }
+.social-icon.social-linkedin > .back { background: #4875B4; }
+.social-icon.social-dribbble > .back { background: #ea4c89; }
+.social-icon.social-flickr > .back { background: #FE0883; }
+
+/* Hover */
+.social-icon:hover {
+  transform: rotateY(100deg);
+}

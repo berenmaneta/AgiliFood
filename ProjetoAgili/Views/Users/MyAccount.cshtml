@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    @Html.Partial("../Users/Partials/_HeaderJSPartial")
+
+
+</head>
+
+<body>
+
+    @Html.Partial("../Users/Partials/_HeaderPartial")
+
+    <section id="content">
+        <div class="content-wrap">
+            <div class="container clearfix">
+                <div class="row">
+
+                    <div class="col-sm-9" style="margin-left:11%;">
+                        <div class="well bg-white b-0">
+                            <h6 class="text-bold text-uppercase">Minha Conta</h6>
+                            <ul>
+                                <li><a href="@Url.Action("ChangePassword", "Users")">Mudar a senha</a></li>
+                            </ul>
+
+                            <div class="line"></div>
+
+                            <h6 class="text-bold text-uppercase">Meus pedidos</h6>
+                            <ul>
+                                <li><a href="@Url.Action("ShowOrders", "Users")">Histórico de pedidos</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>       
+
+            @Html.Partial("../Users/Partials/_FooterPartial")
+
+        </div>
+    </section>
+
+    <div id="gotoTop" class="fa fa-angle-up hidden-md"></div>
+
+    @Html.Partial("../Users/Partials/_FooterJSPartial")
+
+</body>
+</html>

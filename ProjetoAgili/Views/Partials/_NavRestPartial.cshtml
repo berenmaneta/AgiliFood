@@ -1,0 +1,61 @@
+﻿<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- Sidebar user panel -->
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="header">NAVEGAÇÃO</li>
+
+            <li><a href="@Url.Action("Dashboard", "Restaurant")"><i class="fa fa-windows"></i> <span>Início</span></a></li>
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-cutlery"></i> <span>Pratos</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="@Url.Action("ShowDishes", "Restaurant")"><i class="fa fa-edit"></i> Gerenciar</a></li>
+                    <li><a href="@Url.Action("AddDishes", "Restaurant")"><i class="fa fa-plus"></i> Adicionar</a></li>
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-cubes"></i> <span>Ingredientes</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="@Url.Action("ShowIngredients", "Restaurant")"><i class="fa fa-edit"></i> Gerenciar</a></li>
+                    <li><a href="@Url.Action("AddIngredient", "Restaurant")"><i class="fa fa-plus"></i> Adicionar</a></li>
+                </ul>
+            </li>
+
+            <li><a href="@Url.Action("InserirIngrediente", "Restaurant")"><i class="fa fa-cart-arrow-down"></i> <span>Inserir Ingrediente em Prato</span></a></li>
+
+            @*<li><a href="@Url.Action("ShowReports", "Restaurant")"><i class="fa fa-windows"></i> <span>Relatórios</span></a></li>*@
+
+
+
+            @*<li class="treeview">
+                <a href="#">
+                    <i class="fa fa-calculator"></i> <span>Relatórios</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="@Url.Action("ReportTotal", "Administrator")"><i class="fa fa-users"></i> Gerenciar</a></li>
+                    <li><a href="@Url.Action("UsersReport", "Administrator")"><i class="fa fa-soccer-ball-o"></i> Adicionar</a></li>
+                </ul>
+            </li>*@
+
+
+        </ul>
+
+    </section>
+    <!-- /.sidebar -->
+</aside>

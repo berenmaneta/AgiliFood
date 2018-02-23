@@ -1,0 +1,36 @@
+﻿<!-- sidebar menu: : style can be found in sidebar.less -->
+<ul class="sidebar-menu" data-widget="tree">
+    <li class="header">NAVEGAÇÃO</li>
+
+    <li><a href="@Url.Action("Dashboard", "User")"><i class="fa fa-windows"></i> <span>Início</span></a></li>
+
+    @*<li><a href="@Url.Action("Chamada", "Chamada")"><i class="fa fa-hand-pointer-o"></i> <span>Chamada</span></a></li>*@
+
+    <li class="treeview">
+        <a href="#">
+            <i class="fa fa-hand-pointer-o"></i> <span>Relatórios</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="@Url.Action("Chamada", "Chamada")"><i class="fa fa-hand-spock-o"></i> <span>Simples</span></a></li>
+            <li><a href="@Url.Action("VerChamadas", "Chamada")"><i class="fa fa-hand-paper-o"></i> Detalhado</a></li>
+        </ul>
+    </li>
+
+    <li class="treeview">
+        <a href="#">
+            <i class="fa fa-calendar"></i> <span>Ocorrências</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="@Url.Action("Inserir", "Ocorrencia")"><i class="fa fa-plus"></i> Inserir Ocorrência</a></li>
+            <li><a href="@Url.Action("ShowOcorrencias", "Ocorrencia")"><i class="fa fa-calendar-plus-o"></i> Mostrar Ocorrências</a></li>
+        </ul>
+    </li>
+
+   
+</ul>

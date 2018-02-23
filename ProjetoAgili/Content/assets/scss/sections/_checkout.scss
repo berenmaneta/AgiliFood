@@ -1,0 +1,111 @@
+//===========================================================
+
+// Minovate - sections/checkout.scss
+
+//===========================================================
+
+.checkout,
+.cart,
+.wishlist {
+  background-color: white;
+  padding: 40px 20px 200px;
+  margin-bottom: 20px;
+
+  table {
+    border-bottom: 1px solid #ebebeb;
+    >thead>tr>th {
+      border-bottom: 1px solid $theme-color;
+      font-family: $font-raleway;
+      font-weight: $font-weight-bold;
+      font-size: 13px;
+      color: $font-color;
+      text-transform: uppercase;
+    }
+    tr td {
+      padding: 30px 8px;
+
+      &:first-child {
+        padding: 15px 8px;
+      }
+    }
+    td.quantity {
+      .bootstrap-touchspin {
+        width: 124px;
+        font-family: $font-raleway;
+        font-weight: $font-weight-bold;
+
+        .myBtn {
+          font-size: 18px;
+          height: 34px;
+        }
+      }
+      .quantity {
+        height: 34px;
+        width: 60px;
+        text-align: center;
+        margin-left: -3px;
+        margin-right: -2px;
+      }
+    }
+    td.product {
+      p {
+        text-transform: uppercase;
+        font-weight: $font-weight-light;
+        margin-bottom: 0;
+        line-height: 1!important;
+      }
+
+      em {
+        font-size: 12px;
+        color: $font-color-40;
+      }
+    }
+  }
+
+  .summary {
+    margin-top: 40px;
+    float: right;
+    >li {
+      font-family: $font-raleway;
+      font-size: 13px;
+      font-weight: $font-weight-bold;
+      color: $theme-color;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+
+      span {
+        color: $font-color;
+        display: inline-block;
+        width: 200px;
+      }
+
+      &.total {
+        margin-top: 25px;
+        padding-top: 15px;
+        border-top: 2px solid #ebebeb;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.checkout {
+  padding-bottom: 40px;
+
+  .summary {
+    float: none;
+    text-align: right;
+
+    >li span {
+      width: auto;
+      float: left;
+    }
+  }
+}
+
+.wishlist {
+  padding-bottom: 0;
+  table {
+    border-bottom: 0;
+  }
+}

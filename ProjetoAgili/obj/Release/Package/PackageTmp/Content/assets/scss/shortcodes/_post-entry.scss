@@ -1,0 +1,140 @@
+//===========================================================
+
+// Minovate - shortcodes/post-entry.scss
+
+//===========================================================
+
+.post-entry {
+  position: relative;
+  padding-bottom: 50px;
+
+  .entry-image {
+    margin-bottom: 20px;
+
+    img {
+      opacity: 1;
+      @include transition(opacity .3s linear);
+    }
+
+    >a:hover {
+      img {
+        opacity: .8;
+      }
+    }
+  }
+
+  .entry-title {
+    h3,h2 {
+      font-size: 16px;
+      margin-bottom: 5px;
+
+      a {
+        color: $font-color;
+
+        &:hover {
+          color: $theme-color;
+        }
+      }
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  .entry-meta {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    >li {
+      display: inline;
+      font-style: italic;
+      font-size: $font-size-sm;
+      color: $font-color-50;
+
+      >a {
+        color: $font-color-50;
+
+        &:hover {
+          color: $theme-color;
+        }
+      }
+
+      &:after {
+        content: "/";
+        margin: 0 5px 0 6px;
+      }
+
+      &:last-child:after {
+        display: none;
+      }
+    }
+  }
+
+  .entry-content {
+    margin-top: 30px;
+  }
+
+  .plus {
+    position: absolute;
+    right: -15px;
+    bottom: 20px;
+  }
+
+  .entry-tags {
+    margin-bottom: 20px;
+  }
+
+  .entry-share {
+    padding: 20px 0;
+
+    >span {
+      font-family: $font-raleway;
+      color: $heading-color;
+      text-transform: uppercase;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  .entry-comments {
+    margin-top: 40px;
+  }
+}
+
+//blog posts
+
+.blog-posts {
+  .post-entry {
+    padding-bottom: 20px;
+
+    .entry-image img {
+      border-radius: 4px;
+    }
+  }
+
+  .post-divider {
+    border-top: 2px solid #f2f2f2;
+  }
+}
+
+//blog item
+
+.blog-post {
+  .post-entry {
+    .entry-meta {
+      margin-bottom: 30px;
+    }
+    .entry-content {
+      >p,
+      >pre,
+      >div {
+        margin-bottom: 30px;
+      }
+    }
+  }
+  .post-divider {
+    border-top: 2px solid #f2f2f2;
+  }
+}

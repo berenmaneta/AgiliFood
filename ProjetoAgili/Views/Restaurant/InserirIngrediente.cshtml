@@ -1,0 +1,75 @@
+﻿@model ProjetoAgili.Models.IngredienteDishViewModel
+
+@{
+    Layout = "../Layout/RestaurantIndex.cshtml";
+}
+
+       
+<div class="content-wrapper" style="overflow:hidden;">
+    <section class="content-header">
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">Inserir Ingrediente no Prato</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            @using (Html.BeginForm("InserirIngrediente", "Restaurant", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+                <div class="box-body">
+                            
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Ingredientes</label>
+                        <div class="col-sm-10">
+                            <select class="form-control select2" multiple="multiple" data-placeholder="Selecione os ingredientes"
+                                    style="width: 100%;" name="SelectedIngredients[]" required>
+                                @foreach (var item in Model.Ingredients)
+                                {
+                                    <option value="@item.IdIngredient">
+                                        @item.Name
+                                    </option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <br /><br />
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Prato</label>
+                        <div class="col-sm-10">
+                            <select class="form-control select2" data-placeholder="Selecione o Prato"
+                                    style="width: 30%;" name="IdDish" required>
+                                <option value="Selecione...">
+                                    @foreach (var item in Model.Dishes)
+                                    {
+                                    <option value="@item.IdDish">
+                                        @item.Name
+                                    </option>
+                                    }
+                                </select>
+                                <br />
+                            </div>
+                        </div>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    <button id="btn-1inserir" type="submit" class="btn btn-info pull-right">Inserir</button>
+
+                    @if (Model.Dishes.Count < 1)
+                    {
+                        <script>
+                            var button = document.getElementById("btn-1inserir");
+                            button.disabled = true;
+                        </script>
+                    }
+                    
+                </div>
+                <!-- /.box-footer -->
+            }
+        </div>
+    </section>
+</div>
+
+
+

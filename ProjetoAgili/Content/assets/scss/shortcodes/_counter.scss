@@ -1,0 +1,29 @@
+//===========================================================
+
+// Minovate - sections/counter.scss
+
+//===========================================================
+
+.counter {
+  font-family: $font-raleway;
+  font-weight: $font-weight-bold;
+  font-size: 36px;
+  margin-top: 5px;
+
+  +h5 {
+    font-weight: $font-weight-light;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    margin-bottom: 0;
+
+    &:before {
+      display: block;
+      position: relative;
+      margin: 20px auto 25px;
+      content: '';
+      width: 40px;
+      border-top: 2px solid $heading-color;
+    }
+  }
+}

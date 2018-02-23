@@ -1,0 +1,125 @@
+﻿
+@{
+    Layout = "../Layout/Index.cshtml";
+}
+
+<div class="content-wrapper" style="overflow:hidden;">
+    <section class="content-header">
+        <div class="row">
+
+            <div class="col-lg-4 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <h3>Gerenciar</h3>
+                        <p>Usuários</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-users"></i>
+                    </div>
+                    <a href="@Url.Action("ShowUsers", "Administrators")" class="small-box-footer">
+                        Gerenciar <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <h3>Adicionar</h3>
+                        <p>Usuários</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-user-plus"></i>
+                    </div>
+                    <a href="@Url.Action("AddUser", "Administrators")" class="small-box-footer">
+                        Adicionar <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <h3>Gerenciar</h3>
+                        <p>Restaurantes</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-cutlery"></i>
+                    </div>
+                    <a href="@Url.Action("ShowRestaurants", "Administrators", new { enabled = true })" class="small-box-footer">
+                        Gerenciar <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <h3>Adicionar</h3>
+                        <p>Restaurante</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-cutlery"></i>
+                    </div>
+                    <a href="@Url.Action("AddRestaurant", "Administrators")" class="small-box-footer">
+                        Adicionar <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+
+
+
+            <div class="col-lg-4 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <h3>Relatório</h3>
+                        <p>de Pedidos</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-calculator"></i>
+                    </div>
+                    <a href="@Url.Action("Reports", "Administrators")" class="small-box-footer">
+                        Relatórios <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+      
+
+
+        <div class="row">
+           
+      
+            @*<div class="col-md-3 col-sm-6 col-xs-12">
+                <a href="@Url.Action("AtividadeIndex", "ExportPDF")">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-olive"><i class="fa fa-user"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Relatório</span>
+                            <span class="info-box-number">Por Usuário</span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </a>
+            </div>*@
+
+        </div>
+
+
+    </section>
+</div>

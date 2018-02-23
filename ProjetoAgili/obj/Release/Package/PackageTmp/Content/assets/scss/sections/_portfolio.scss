@@ -1,0 +1,223 @@
+//===========================================================
+
+// Minovate - sections/portfolio.scss
+
+//===========================================================
+
+
+.portfolio {
+
+  .portfolio-item {
+    position: relative;
+
+    .portfolio-image {
+      position: relative;
+      overflow: hidden;
+
+      img {
+        @include transition(all .25s ease);
+        width: 100%;
+      }
+
+      // image overlay
+      .portfolio-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        z-index: 2;
+        text-align: center;
+        background-color: rgba(0,0,0,0.5);
+        @include transition(all .25s ease);
+
+        a {
+          position: absolute;
+          top: 55%;
+          left: 50%;
+          background-color: #000;
+          width: 40px !important;
+          height: 40px !important;
+          margin: -22px 0 0 -44px;
+          font-size: 14px;
+          line-height: 40px;
+          text-align: center;
+          color: #fff;
+          border-radius: 50%;
+          -webkit-backface-visibility: hidden;
+          @include transition(all .4s ease);
+
+          &.btn-right {
+            left: auto;
+            right: 50%;
+            margin-left: 0;
+            margin-right: -44px;
+          }
+
+          &.btn-middle {
+            display: block;
+            margin: -20px 0 0 -20px;
+          }
+
+          &:hover {
+            background-color: $theme-color;
+          }
+
+          &:active,
+          &:focus {
+            outline: 0;
+          }
+        }
+
+      }
+    }
+
+    &:hover {
+      .portfolio-image {
+        .portfolio-overlay {
+          opacity: 1;
+
+          a {
+            top: 50%;
+          }
+        }
+      }
+    }
+
+    //image description
+    .portfolio-desc {
+      z-index: 3;
+      padding: 15px 5px 10px;
+      @include transition(all .15s ease);
+      position: relative;
+
+      h3, h4 {
+        margin: 0;
+        padding: 0;
+        font-size: $font-size-lg;
+        a {
+          color: $font-color;
+          &:hover {
+            color: $theme-color;
+          }
+        }
+      }
+      span {
+        display: block;
+        margin-top: 3px;
+        color: $font-color-60;
+        a {
+          color: $font-color-60;
+          &:hover {
+            color: $theme-color;
+          }
+        }
+      }
+      h4 {
+        font-size: $font-size-md;
+
+        +span {
+          font-size: $font-size-sm;
+        }
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        height: 1px;
+        width: 40px;
+        background-color: #eaeaea;
+        margin-left: -5px;
+        bottom: 0;
+      }
+    }
+  }
+
+  //portfolio images with hidden description as default, shows on hover
+  &.portfolio-notitle {
+    .portfolio-item {
+      overflow: hidden;
+
+      .portfolio-desc {
+        position: absolute;
+        display: block !important;
+        width: 100%;
+        height: 78px;
+        padding: 15px 5px;
+        top: auto;
+        bottom: -79px;
+        left: 0;
+        background-color: #FFF;
+        border-bottom: 1px solid #EEE;
+
+        &:after {
+          display: none;
+        }
+      }
+
+      &:hover {
+        .portfolio-image {
+          img {
+            @include transform(translateY(-30px) scale(1.05));
+          }
+          .slide img {
+            @include transform(translateY(-20px) scale(1));
+          }
+        }
+        .portfolio-desc {
+          bottom: 0;
+        }
+      }
+    }
+  }
+
+  //portfolio images without any white space
+  &.portfolio-nospace {
+    .row {
+      margin : 0;
+    }
+    .row >.portfolio-item {
+      margin: 0;
+      padding: 0;
+
+      .portfolio-desc {
+        padding: 15px 15px 10px;
+      }
+    }
+  }
+
+
+}
+
+
+//mixItUp
+
+.mix-filter {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+
+  li {
+    color: $font-color;
+    cursor: pointer;
+    padding: 6px 15px;
+    margin-right: 2px;
+    margin-bottom: 5px;
+    background: #eee;
+    display: inline-block;
+
+    &:hover,
+    &.active {
+      color: white;
+      background-color: $theme-color;
+    }
+  }
+}
+
+.mix-grid {
+  .mix {
+    display: none;
+    margin-bottom: 15px;
+  }
+}

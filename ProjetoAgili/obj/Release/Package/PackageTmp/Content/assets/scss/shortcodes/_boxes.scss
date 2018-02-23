@@ -1,0 +1,23 @@
+//===========================================================
+
+// Minovate - shortcodes/boxes.scss
+
+//===========================================================
+
+.box {
+  width: 100%;
+  background-color: #eee;
+  padding: 20px;
+
+  .myBtn {
+    margin: 0;
+  }
+
+  &.box-3d {
+    border-bottom: 3px solid darken(#eee, 10%);
+  }
+
+  &.box-rounded {
+    border-radius: 2px;
+  }
+}

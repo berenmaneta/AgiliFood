@@ -1,0 +1,73 @@
+﻿@model ProjetoAgili.Models.ResetPasswordViewModel
+
+<div class="box box-info">
+    <div class="box-header with-border">
+        <h3 class="box-title">Informações de Perfil</h3>
+    </div>
+    <!-- /.box-header -->
+    <!-- form start -->
+    @using (Html.BeginForm("DataProfile", "Administrators", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+
+        @Html.HiddenFor(x => x.Email)
+        @Html.HiddenFor(x => x.Password)
+        @Html.HiddenFor(x => x.ConfirmPassword)
+
+
+        <div class="box-body">
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Nome</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(a => a.Name, new { @class = "form-control", placeholder = "Nome" })
+                    <br />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Telefone</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(a => a.Phone, new { @class = "form-control", placeholder = "Telefone" })
+                    <br />
+                </div>
+            </div>
+
+        </div>
+
+        <div class="box-footer">
+            <button type="submit" class="btn btn-info pull-right">Salvar</button>
+        </div>
+    }
+</div>
+
+
+<div class="box box-info">
+    <div class="box-header with-border">
+        <h3 class="box-title">Foto de Perfil</h3>
+    </div>
+    <!-- /.box-header -->
+    <!-- form start -->
+    @using (Html.BeginForm("UploadImage", "Administrators", FormMethod.Post, new { @enctype = "multipart/form-data", id = "dishPictureForm" }))
+    {
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <div class="box-body">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Foto</label>
+                <div class="col-sm-10">
+                    <input style="cursor:pointer;" type="file" id="file" name="file" />
+                </div>
+                <br /><br />
+            </div>
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+            <button type="submit" class="btn btn-info pull-right">Inserir</button>
+        </div>
+        <!-- /.box-footer -->
+    }
+</div>

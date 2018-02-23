@@ -1,0 +1,41 @@
+//===========================================================
+
+// Minovate - shortcodes/pagination.scss
+
+//===========================================================
+
+.myPagination {
+  border-radius: 2px;
+
+  >li {
+    >a,
+    >span {
+      margin-right: 3px;
+      border-radius: 2px!important;
+      border-width: 2px;
+      border-color: #dfdfdf;
+      color: $font-color-40;
+      font-family: $font-raleway;
+      font-weight: $font-weight-bold;
+      font-size: 12px;
+      padding: 0 12px;
+      line-height: 32px;
+      width: 36px;
+      text-align: center;
+      background-color: transparent;
+
+      &:hover {
+        color: $font-color;
+        border-color: $theme-color;
+        background-color: white;
+      }
+    }
+
+    >span,
+    >span:hover{
+      background-color: $theme-color;
+      color: white;
+      border-color: $theme-color;
+    }
+  }
+}

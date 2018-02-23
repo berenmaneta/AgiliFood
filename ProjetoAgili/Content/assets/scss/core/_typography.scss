@@ -1,0 +1,178 @@
+
+
+//===========================================================
+
+// Minovate - core/typography.scss
+
+//===========================================================
+
+
+
+//========= general typography settings ===========
+
+body {
+  font-family: $font-lato;
+  font-size: $font-size-md;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-md;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  -ms-overflow-style: scrollbar;
+  color: $body-color;
+}
+
+a {
+  text-decoration: none !important;
+  color: $theme-color;
+
+  &:hover {
+    color: $font-color;
+  }
+
+  img {
+    border: none;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+iframe {
+  border: none !important;
+}
+
+#wrapper {
+  position: relative;
+  float: none;
+  width: 100%;
+  margin: 0;
+  background-color: #FFF;
+}
+
+//========= headings settings ===========
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-raleway;
+  //color: $heading-color;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-md;
+  margin: 0 0 30px 0;
+}
+
+h5,
+h6 {
+  margin-bottom: 20px;
+}
+
+.heading-block {
+  h1,
+  h2,
+  h3 {
+    margin-bottom: 0;
+
+    +p {
+      color: $font-color-50;
+    }
+  }
+  &:after {
+    content: '';
+    display: block;
+    margin-top: 20px;
+    width: 50px;
+    border-top: 2px solid $heading-color;
+  }
+  &.center {
+    text-align: center;
+
+    &:after {
+      margin: 30px auto 0;
+    }
+  }
+
+  &.color-divider {
+    &:after {
+      border-color: $theme-color;
+    }
+  }
+}
+
+.header-line {
+  position: relative;
+  margin-bottom: 30px;
+
+  h1,h2,h3,h4,h5,h6 {
+    position: relative;
+    background-color: #f8f8f8;
+    display: inline-block;
+    z-index: 2;
+    margin: 0;
+    padding-right: 10px;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0;
+    left: auto;
+    top: 52%;
+    right: 0;
+    border-top: 1px solid #eee;
+  }
+
+}
+
+//========= other elements settings ===========
+
+.reference-quote {
+  font-size: 13px;
+  color: $font-color;
+  font-style: italic;
+  font-weight: $font-weight-bold;
+}
+
+p.reference-quote-meta {
+  padding-left: 10px;
+  position: relative;
+  font-size: 13px;
+  color: $font-color;
+  line-height: 1.3!important;
+
+  >span {
+    font-size: $font-size-sm;
+    color: $font-color-60;
+  }
+
+  &:before {
+    content: "-";
+    position: absolute;
+    left: 0;
+  }
+}
+
+blockquote p {
+  font-weight: bold;
+  font-style: italic;
+  line-height: 2!important;
+}
+
+.condensed {
+  font-family: 'Open Sans Condensed', sans-serif;
+  line-height: 1;
+}
+
+.icon-circle {
+  border-radius: 50%;
+  border: 2px solid;
+  width: 54px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 30px;
+}

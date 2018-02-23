@@ -1,0 +1,96 @@
+//===========================================================
+
+// Minovate - sections/add-nav.scss
+
+//===========================================================
+
+
+#add-navbar {
+  border-bottom: 1px solid #f2f2f2;
+  height: 35px;
+  position: absolute;
+  width: 100%;
+  z-index: 9999;
+
+  .container {
+    width: 100%;
+    padding: 0 30px;
+    position: relative;
+  }
+
+  ul {
+    list-style: none;
+    padding: 10px 0;
+    line-height: 15px;
+    margin: 0;
+
+    &.divided {
+      >li {
+        border-right: 1px solid #f2f2f2;
+
+        &:last-child {
+          border-right: 0;
+        }
+      }
+    }
+
+    >li {
+      line-height: 15px;
+      font-size: 13px;
+      font-weight: $font-weight-light;
+      display: inline-block;
+      padding: 0 15px;
+      position: relative;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+
+      span {
+        color: $font-color-50;
+      }
+
+      i.fa {
+        font-size: 14px;
+      }
+
+      a {
+        color: $font-color-50;
+
+        &:hover,
+        &.active {
+          color: $theme-color;
+        }
+      }
+
+      &.dropdown:hover {
+        >a {
+          color: $theme-color;
+        }
+      }
+
+      ul {
+        background-color: #f8f8f8;
+        position: absolute;
+        border-top: 1px solid $theme-color;
+        top: 23px;
+        padding: 5px 10px;
+        margin: 0;
+
+        >li {
+          display: block;
+          padding: 0;
+          margin: 0;
+          >a {
+            display: block;
+            padding: 5px 15px;
+          }
+        }
+      }
+    }
+  }
+}

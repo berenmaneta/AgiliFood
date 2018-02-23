@@ -1,0 +1,82 @@
+//===========================================================
+
+// Minovate - shortcodes/features.scss
+
+//===========================================================
+
+
+//======== feature-box ==========
+
+.feature-box {
+  margin-bottom: 40px;
+
+  .heading {
+    position: relative;
+
+    h3 {
+      font-size: 15px;
+      font-weight: $font-weight-bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      padding-left: 30px;
+
+      &.underline {
+        border-bottom: 2px solid $heading-color;
+        margin-bottom: 20px;
+        padding-bottom: 5px;
+      }
+    }
+    >a {
+      font-size: 22px;
+      color: $theme-color;
+      position: absolute;
+      top: -7px;
+      left: 0;
+
+      &:hover {
+        color: $theme-color;
+      }
+    }
+  }
+
+  p {
+    color: $font-color-50;
+  }
+
+  &.no-icon {
+    .heading {
+      h3 {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &.icon-block {
+    position: relative;
+    >a {
+      position: absolute;
+      display: inline-block;
+      color: white;
+      background-color: $theme-color;
+      border-radius: 2px;
+      padding: 0;
+      font-size: 22px;
+      line-height: 46px;
+      width: 46px;
+      text-align: center;
+      @include transition(background-color .25s linear);
+
+      &:hover {
+        background-color: $heading-color;
+      }
+    }
+    .heading,
+    p {
+      padding-left: 65px;
+    }
+    .heading>h3 {
+      padding-left: 0;
+    }
+  }
+}

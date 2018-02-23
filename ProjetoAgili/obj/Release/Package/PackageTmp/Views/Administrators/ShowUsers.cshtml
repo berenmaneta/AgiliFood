@@ -1,0 +1,85 @@
+﻿@model ProjetoAgili.Models.ShowUsersModel
+
+@{
+    Layout = "../Layout/Index.cshtml";
+}
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+</head>
+
+<div class="content-wrapper" style="overflow:hidden">
+    <section class="content-header">
+        <div class="box">
+            <div class="box-header">
+                <h1 class="box-title">Lista de Usuários</h1>
+            </div>
+            <div class="box-body">
+                <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Editar Usuário</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Users)
+                        {
+                            <tr id="@item.IdUsuario">
+                                <td>@item.Name</td>
+                                <td>@item.Email</td>
+                                <td>@*<a href="@Url.Action("Visualizar", "Aluno", new { id = @item.IdUsuario })" class="btn-success btn-sm">Ver</a>&nbsp;&nbsp;*@<a href="@Url.Action("EditUser", "Administrators", new { id = @item.IdUsuario })" class="btn-primary btn-sm">Editar</a>&nbsp;&nbsp;<a href="#" id="open-modal" class="btn-danger btn-sm" data-id="@item.IdUsuario" data-toggle="modal" data-target="#modal-default">Deletar</a>@*&nbsp;&nbsp;<a href="@Url.Action("Deletar", "Aluno", new { id = @item.IdUsuario })" class="btn-danger btn-sm">Deletar</a>*@</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<div class="modal fade" id="modal-default">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                @*<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>*@
+                <h4 class="modal-title">Deletar Usuário</h4>
+            </div>
+            <div class="modal-body">
+                <p>Deseja excluir permanentemente o Usuário<strong style="display: none;" id="cole-aqui"></strong>? </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Voltar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="testando()">Excluir</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<script>
+    $(document).on("click", "#open-modal", function () {
+        var myBookId = $(this).data('id');
+        $(".modal-body #cole-aqui").text(myBookId);
+    });
+
+    function testando() {
+        var myBookId = $(".modal-body #cole-aqui").text();
+        $.ajax(
+            {
+                type: 'POST',
+                url: '/Administrators/DeleteUser/' + myBookId,
+                contentType: "application/json",
+                success: function (data) {
+                    var row = document.getElementById(myBookId);
+                    row.parentNode.removeChild(row);
+                    location.reload();
+                }
+            });
+    }
+</script>

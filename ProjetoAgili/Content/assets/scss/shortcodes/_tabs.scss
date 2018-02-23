@@ -1,0 +1,72 @@
+//===========================================================
+
+// Minovate - shortcodes/tabs.scss
+
+//===========================================================
+
+.tabs-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  >li {
+    margin-bottom: 1px;
+    position: relative;
+    >a {
+      display: block;
+      background-color: #fff;
+      padding: 10px 15px;
+      color: $font-color-60;
+
+      &:hover {
+        color: $theme-color;
+      }
+    }
+    &.active {
+      >a {
+        background-color: $theme-color;
+        color: white;
+        font-weight: $font-weight-bold;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        @include triangle(12px, $theme-color, right);
+        right: -6px;
+        top: 15px;
+      }
+    }
+  }
+}
+
+.nav.nav-tabs.myTabs {
+  border-bottom: 1px solid $theme-color;
+  >li {
+    margin-bottom: 0;
+    >a {
+      font-family: $font-raleway;
+      font-size: 11px;
+      font-weight: $font-weight-bold;
+      text-transform: uppercase;
+      border-radius: 0;
+      background-color: #f7f7f7;
+      border: 0;
+      color: $font-color-70;
+
+      &:hover {
+        background-color: #efefef;
+      }
+    }
+    &.active {
+      >a {
+        background-color: $theme-color;
+        color: white;
+      }
+    }
+  }
+}
+
+
+.tab-content>div {
+  padding: 15px;
+}

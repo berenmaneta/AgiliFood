@@ -1,0 +1,348 @@
+//===========================================================
+
+// Minovate - shortcodes/form-elements.scss
+
+//===========================================================
+
+.form-control {
+  color: $font-color;
+  outline: 0;
+  vertical-align: top;
+  background-color: #fff;
+  filter: none !important;
+  @include box-shadow(none);
+  border-radius: 2px;
+  border: 1px solid $bright-default;
+  height: 38px;
+  @include transition(all .2s linear);
+
+  &:not(select) {
+    -webkit-appearance: none !important;
+  }
+
+  @include placeholder {
+    @include transition(color .2s linear);
+    color: $font-color-30;
+    font-style: italic;
+    font-size: $font-size-sm;
+    line-height: 20px;
+  }
+
+  &.input-lg {
+    @include placeholder {
+      font-size: $font-size-lg;
+    }
+  }
+
+  &.input-sm {
+    @include placeholder {
+      line-height: 18px;
+    }
+  }
+
+  &:hover:not(:disabled) {
+    border-color: darken($bright-default, 15%);
+  }
+
+  &:focus,
+  &:focus:hover {
+    outline: none;
+    border: 1px solid;
+    border-color: $theme-color;
+    @include box-shadow(none);
+  }
+
+  &.rounded {
+    border-radius: 600px;
+  }
+
+  &.input-unstyled {
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    @include placeholder {
+      font-size: 16px;
+    }
+
+    &:focus,
+    &:focus:hover {
+      border: 0;
+    }
+  }
+
+  &.input-3d {
+    border-bottom: 3px solid $bright-default;
+
+    &:focus,
+    &:focus:hover {
+      border-bottom: 3px solid $theme-color;
+    }
+  }
+
+  &.unhappy {
+    border-color: $lightred;
+  }
+
+  &.no-border {
+    border: 0;
+    border-radius: 0;
+
+    &:focus,
+    &:focus:hover {
+      border: 0;
+    }
+  }
+}
+
+.input-group {
+  button {
+    margin: 0;
+    height: 38px;
+    line-height: 38px;
+  }
+  &.input-group-3d {
+    .form-control {
+      border-right: 0!important;
+
+      &:hover {
+        +.input-group-btn {
+          button {
+            border-color: darken($bright-default, 15%);
+          }
+        }
+      }
+      &:focus,
+      &:focus:hover {
+        +.input-group-btn {
+          button {
+            border-bottom: 3px solid $theme-color;
+          }
+        }
+      }
+    }
+    button {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      line-height: 35px;
+      border-bottom: 3px solid $bright-default;
+    }
+  }
+}
+
+.form-group {
+  >label {
+    text-transform: uppercase;
+    font-size: 13px;
+    font-family: $font-raleway;
+  }
+}
+
+form .unhappyMessage {
+  color: $lightred;
+  font-size: $font-size-sm;
+  font-style: italic;
+}
+
+//myInput
+
+textarea.myInput {
+  padding: 15px;
+}
+
+.form-control {
+  border-color: #ebebeb;
+  &.myInput {
+    border-width: 2px;
+    &:not(textarea) {
+      height: 46px;
+    }
+    &:focus {
+      border-width: 2px;
+    }
+    @include placeholder {
+      font-family: $font-raleway;
+      font-style: normal;
+      font-weight: $font-weight-bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+// bootstrap select
+
+.bootstrap-select {
+  .selectpicker {
+    background-color: transparent;
+    border: 2px solid #dfdfdf;
+    border-radius: 2px;
+    color: $font-color-50;
+
+    &:hover {
+      border-color: #bbb;
+    }
+
+    &:focus {
+      outline: 0!important;
+    }
+  }
+
+  &.open {
+    .selectpicker {
+      background-color: white;
+      border-color: #999;
+      @include box-shadow(none);
+    }
+  }
+}
+
+//custom checkbox & radio
+.checkbox-custom {
+  padding-left: 20px;
+  cursor: pointer;
+  color: $font-color-60;
+  font-weight: $font-weight-normal;
+
+  input {
+    position: absolute;
+    opacity: 0;
+
+    &:checked {
+      +i {
+        background-color: transparent;
+        border-color: #666;
+        color: #666;
+
+        &:before {
+          opacity: 1;
+        }
+
+      }
+      +span {
+        .active {
+          display: inherit;
+        }
+      }
+    }
+
+    &[type='radio'] {
+      +i,
+      +i:before {
+        border-radius: 50%;
+      }
+    }
+
+    &[disabled] {
+      +i {
+        border-color: #e2e2e2;
+        background-color: #f2f2f2;
+      }
+      +i:before {
+        background-color: #e2e2e2;
+      }
+    }
+  }
+
+  >i {
+    position: relative;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-top: -2px;
+    margin-right: 4px;
+    margin-left: -20px;
+    line-height: 1;
+    vertical-align: middle;
+    background-color: transparent;
+    border: 2px solid #dfdfdf;
+    @include transition(all .2s);
+
+    &:before {
+      position: absolute;
+      content: "\f00c";
+      @include icon;
+      @include transition(all .2s);
+      z-index: 1;
+      font-size: 11px;
+      left: 2px;
+      top: 2px;
+      opacity: 0;
+    }
+  }
+
+  >span {
+    margin-left: -20px;
+
+    .active {
+      display: none;
+    }
+  }
+
+  &:hover {
+    >i {
+      border-color: $theme-color;
+    }
+  }
+
+  &.checkbox-custom-sm {
+    input:checked+i:before {
+      top: 2px;
+      left: 2px;
+      width: 10px;
+      height: 10px;
+    }
+
+    >i {
+      width: 16px;
+      height: 16px;
+      margin-right: 6px;
+      margin-left: -18px;
+    }
+  }
+
+  &.checkbox-custom-lg {
+    input:checked+i:before {
+      top: 3px;
+      left: 3px;
+      width: 22px;
+      height: 22px;
+    }
+
+    >i {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+// range slider
+
+.slider {
+  margin-bottom: 0;
+  margin-top: 5px;
+
+  .slider-track {
+    background-color: #f2f2f2;
+    border-radius: 0;
+  }
+
+  .slider-selection {
+    background-color: $theme-color;
+    @include box-shadow(none);
+    border-radius: 0;
+  }
+
+  .slider-handle {
+    border-radius: 0;
+    background-color: $font-color;
+    @include box-shadow(none);
+    width: 16px;
+    height: 16px;
+  }
+
+  &.slider-horizontal {
+    .slider-handle {
+      margin-top: -5px;
+    }
+  }
+}

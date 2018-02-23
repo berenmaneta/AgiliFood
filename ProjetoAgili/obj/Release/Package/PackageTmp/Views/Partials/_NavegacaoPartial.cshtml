@@ -1,0 +1,53 @@
+﻿<!-- sidebar menu: : style can be found in sidebar.less -->
+<ul class="sidebar-menu" data-widget="tree">
+    <li class="header">NAVEGAÇÃO</li>
+
+    <li><a href="@Url.Action("Dashboard", "Administrators")"><i class="fa fa-windows"></i> <span>Início</span></a></li>
+
+    @*<li><a href="@Url.Action("ShowUsers", "Administrators")"><i class="fa fa-users"></i> <span>Gerenciar Usuários</span></a></li>*@
+
+
+    <li class="treeview">
+        <a href="#">
+            <i class="fa fa-users"></i> <span>Usuários</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="@Url.Action("ShowUsers", "Administrators")"><i class="fa fa-users"></i> Gerenciar</a></li>
+            <li><a href="@Url.Action("AddUser", "Administrators")"><i class="fa fa-plus"></i> Adicionar</a></li>
+        </ul>
+    </li>
+
+    <li class="treeview">
+        <a href="#">
+            <i class="fa fa-cutlery"></i> <span>Restaurantes</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="@Url.Action("ShowRestaurants", "Administrators", new { enabled = true })"><i class="fa fa-users"></i> Gerenciar</a></li>
+            <li><a href="@Url.Action("AddRestaurant", "Administrators")"><i class="fa fa-plus"></i> Adicionar</a></li>
+            <li><a href="@Url.Action("ShowRestaurants", "Administrators", new { enabled = false })"><i class="fa fa-plus"></i> Desabilitados</a></li>
+        </ul>
+    </li>
+
+    <li><a href="@Url.Action("Reports", "Administrators")"><i class="fa fa-calculator"></i> <span>Relatório de Pedidos</span></a></li>
+
+
+
+    @*<li class="treeview">
+        <a href="#">
+            <i class="fa fa-calculator"></i> <span>Relatórios</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="@Url.Action("ReportTotal", "Administrator")"><i class="fa fa-users"></i> Total</a></li>
+            <li><a href="@Url.Action("UsersReport", "Administrator")"><i class="fa fa-soccer-ball-o"></i> Por Funcionário</a></li>
+        </ul>
+    </li>*@
+</ul>

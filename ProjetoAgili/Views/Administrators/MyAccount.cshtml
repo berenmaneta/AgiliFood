@@ -1,0 +1,24 @@
+﻿
+@{
+    Layout = "../Layout/Index.cshtml";
+}
+
+<div class="content-wrapper" style="overflow:hidden;">
+    <section class="content-header">
+
+        @Html.Partial("_ResetPasswordPartial")
+
+        @Html.Partial("_DataProfilePartial")
+       
+    </section>
+</div>
+
+@*<script>
+    $(document).ready(function () {
+
+        document.getElementById('Password').value = "123";
+        document.getElementById('ConfirmPassword').value = "123";
+
+    });
+</script>*@
+
